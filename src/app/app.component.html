@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="container jumbotron">
+    <h2><strong>Uplift Intake Form</strong></h2>
+    <div class="line"></div>
+    <br>
+    <div [innerHTML]="messageToUser"></div>
+    <form class="user-form">
+      <p>Name<input class="user-input" #name></p>
+      <p>Email<input type="email" class="user-input" #email></p>
+      <p>Department
+        <select class="user-input" #department>
+          <option disabled selected value>select an option</option>
+          <option value="marketing">Marketing</option>
+          <option value="growth">Growth</option>
+          <option value="customer service">Customer Service</option>
+          <option value="business development">Business Development</option>
+        </select>
+      </p>
+      <p>Delivery Date<input type="date" class="user-input" #date></p>
+      <p>Report Type
+        <select class="user-input" #type>
+          <option disabled selected value>select an option</option>
+          <option value="customer journey">Customer Journey</option>
+          <option value="new users">New Users</option>
+          <option value="inactive users">Inactive Users</option>
+          <option value="quarter report">Quarter Report</option>
+          <option value="yearly report">Yearly Report</option>
+        </select>
+      </p>
+      <p>Code<textarea class="user-input" #code rows="5" cols="100"></textarea></p>
+      <br>
+      <button (click)="submit(name.value, email.value, department.value, date.value, code.value, type.value)" class="btn btn-primary user-btn">Submit</button>
+    </form>
+  </div>
+</div>
